@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ScamShield Bharat - Before you trust it, check it.</title>
+<meta name="description" content="Analyze suspicious investment messages, screenshots and links for potential scam warning signs. English, Hindi and Tamil. No investment advice.">
+<meta name="theme-color" content="#06101d"><meta property="og:title" content="ScamShield Bharat - Before you trust it, check it."><meta property="og:description" content="Check suspicious investment messages, screenshots and links for scam warning signs."><meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="/static/icons/icon-192.png"><link rel="manifest" href="/manifest.webmanifest">
+<style>
+:root{--bg:#06101d;--p:rgba(255,255,255,.07);--pb:rgba(255,255,255,.16);--tx:#eaf2fb;--mu:#a9bbcf;--ac:#2ee6c5;--ac2:#6b7bff;--lo:#43d17a;--ve:#ffb84d;--hi:#ff6674}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--tx);font:18px/1.55 system-ui,"Segoe UI","Noto Sans Devanagari","Noto Sans Tamil",Roboto,sans-serif;min-height:100vh;
+ background:radial-gradient(900px 520px at 88% -8%,rgba(46,230,197,.22),transparent 60%),radial-gradient(760px 520px at -8% 18%,rgba(107,123,255,.24),transparent 60%),var(--bg)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px) 0 0/44px 44px,linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px) 0 0/44px 44px;-webkit-mask-image:radial-gradient(circle at 50% 18%,#000,transparent 75%);mask-image:radial-gradient(circle at 50% 18%,#000,transparent 75%)}
+header,main,footer{position:relative;z-index:1}
+.ic{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.22em}.ic.big{width:2em;height:2em}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 20px;flex-wrap:wrap;border-bottom:1px solid var(--pb);backdrop-filter:blur(10px);background:rgba(6,16,29,.6)}
+.top a{color:var(--tx);text-decoration:none;font-weight:800;font-size:20px}.top nav a{font-weight:500;font-size:16px;color:var(--mu);margin-right:16px}
+select{font:inherit;color:var(--tx);background:#0d1b2e;border:1px solid var(--pb);border-radius:10px;padding:8px 10px;min-height:44px}
+main{max-width:980px;margin:0 auto;padding:28px 18px 60px}
+.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:center}
+h1{font-size:clamp(36px,7.5vw,64px);line-height:1.04;margin:0 0 12px;letter-spacing:-.03em;background:linear-gradient(120deg,#fff,var(--ac) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mu);margin:0 0 6px;font-size:20px}
+.shield{width:100%;max-width:250px;justify-self:center;overflow:visible}
+.shield .rings circle{fill:none;stroke:var(--ac);stroke-width:1.5;opacity:0;transform-origin:120px 120px;animation:ring 3.2s infinite}
+.shield .rings circle:nth-child(2){animation-delay:1s}.shield .rings circle:nth-child(3){animation-delay:2s}
+.shield .tick{stroke-dasharray:140;stroke-dashoffset:140;animation:draw 1.2s .4s forwards}
+.shield .beam{animation:beam 3.4s ease-in-out infinite;filter:drop-shadow(0 0 8px var(--ac))}
+@keyframes ring{0%{transform:scale(.6);opacity:.7}100%{transform:scale(1.15);opacity:0}}@keyframes draw{to{stroke-dashoffset:0}}@keyframes beam{0%,100%{transform:translateY(0);opacity:.2}50%{transform:translateY(135px);opacity:.9}}
+.g{background:var(--p);border:1px solid var(--pb);border-radius:20px;backdrop-filter:blur(12px)}
+.modes{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:22px 0 14px}
+.mode{display:flex;flex-direction:column;gap:6px;text-align:left;padding:14px 16px;border-radius:16px;border:1px solid var(--pb);background:var(--p);color:var(--tx);font:inherit;cursor:pointer;min-height:92px;transition:.2s}
+.mode small{color:var(--mu);font-size:14px}.mode .ic{color:var(--ac)}.mode:hover{transform:translateY(-3px)}
+.mode[aria-selected=true]{border-color:var(--ac);box-shadow:0 0 0 2px rgba(46,230,197,.35),0 12px 40px rgba(46,230,197,.16)}
+.panel{padding:18px}
+button:focus-visible,textarea:focus-visible,input:focus-visible,select:focus-visible,label:focus-within,#out:focus-visible{outline:3px solid #7db3ff;outline-offset:2px}
+textarea,input[type=text]{width:100%;font:inherit;font-size:17px;color:var(--tx);background:rgba(0,0,0,.32);border:1px solid var(--pb);border-radius:12px;padding:12px;margin:8px 0 12px}
+textarea{min-height:150px;resize:vertical}
+.btn{font:inherit;font-weight:700;border:0;border-radius:12px;padding:10px 20px;min-height:48px;cursor:pointer;color:#04121f;background:linear-gradient(135deg,var(--ac),var(--ac2));transition:.2s}.btn:hover{filter:brightness(1.1);transform:translateY(-1px)}.btn:disabled{opacity:.6;cursor:wait}
+.gh{font:inherit;color:var(--tx);background:transparent;border:1px solid var(--pb);border-radius:12px;padding:8px 14px;min-height:44px;cursor:pointer}.gh:hover{border-color:var(--ac)}
+.drop{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:22px;border:2px dashed var(--pb);border-radius:16px;cursor:pointer;position:relative;overflow:hidden;margin:6px 0 12px;transition:.2s}
+.drop.over,.drop:hover{border-color:var(--ac);background:rgba(46,230,197,.08)}.drop span{color:var(--mu);font-size:15px}
+.drop img{max-height:240px;max-width:100%;border-radius:10px;margin-top:8px}.drop .scan{position:absolute;left:0;right:0;top:0;height:3px;background:var(--ac);box-shadow:0 0 14px var(--ac);opacity:0}.drop.busy .scan{opacity:1;animation:scan 1.3s linear infinite}
+@keyframes scan{from{top:0}to{top:100%}}
+.vh{position:absolute;opacity:0;width:1px;height:1px}
+.an{display:inline-block;padding:6px 10px;border-radius:10px;background:rgba(0,0,0,.35);font-size:16px;word-break:break-all}.an .ok{color:var(--lo)}.an .bad{color:var(--hi)}.an .sub2{color:var(--mu)}.an b{font-weight:700}.an u{color:var(--hi);text-decoration:underline wavy}
+.micwrap{text-align:center;padding:10px 0}.mic{width:104px;height:104px;border-radius:50%;border:0;cursor:pointer;color:#04121f;background:linear-gradient(135deg,var(--ac),var(--ac2));display:inline-grid;place-items:center;position:relative}
+.mic.on{animation:pulse 1.4s infinite}@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(46,230,197,.6)}100%{box-shadow:0 0 0 34px rgba(46,230,197,0)}}
+.wave{display:flex;gap:5px;height:38px;align-items:center;justify-content:center;margin-top:10px}.wave i{width:6px;height:8px;border-radius:4px;background:var(--ac)}.mic.on~.wave i{animation:w 0.9s ease-in-out infinite}.wave i:nth-child(2){animation-delay:.12s!important}.wave i:nth-child(3){animation-delay:.24s!important}.wave i:nth-child(4){animation-delay:.36s!important}.wave i:nth-child(5){animation-delay:.48s!important}
+@keyframes w{50%{height:34px}}
+.mu{color:var(--mu)}.small{font-size:15px;color:var(--mu)}#err{color:var(--hi);margin:8px 0 0;min-height:1em}
+.samples{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px;font-size:15px;color:var(--mu)}.samples button{font-size:15px;min-height:38px;padding:4px 12px}
+#out{margin-top:30px;outline:none}
+.rtop{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.state{display:flex;gap:14px;align-items:center;padding:16px;border-radius:20px;border:1px solid var(--c);background:linear-gradient(135deg,color-mix(in srgb,var(--c) 22%,transparent),var(--p))}
+.state .i{flex:none;width:52px;height:52px;display:grid;place-items:center;background:var(--c);color:#06101d;font-weight:900;font-size:28px;border-radius:50%}.state.HIGH .i{border-radius:10px}.state.VERIFY .i{border-radius:50% 50% 10px 10px}
+.state h2{margin:0;font-size:22px}.state p{margin:4px 0 0}.lo{--c:var(--lo)}.ve{--c:var(--ve)}.hi{--c:var(--hi)}
+.gauge{width:100%;max-width:300px;display:block;margin:10px auto 0}.gauge .s{fill:none;stroke-width:16}.gauge .lo{stroke:var(--lo)}.gauge .ve{stroke:var(--ve)}.gauge .hi{stroke:var(--hi)}.gauge .needle{transform-box:view-box;transform-origin:100px 100px;transform:rotate(var(--a));animation:sweep 1.2s cubic-bezier(.2,.9,.2,1) both}.gauge line{stroke:#fff;stroke-width:4;stroke-linecap:round}.gauge circle{fill:#fff}.gauge text{fill:var(--mu);font-size:11px}
+@keyframes sweep{from{transform:rotate(-95deg)}}
+.rad{padding:10px;text-align:center}.rad h3{margin:4px 0 0;font-size:16px;color:var(--mu);font-weight:600}.radar{width:100%;max-width:290px}.radar .ring,.radar .ax{fill:none;stroke:var(--pb)}.radar .val{fill:rgba(255,184,77,.32);stroke:var(--ve);stroke-width:2.5;transform-box:view-box;transform-origin:100px 100px;animation:grow .9s .2s cubic-bezier(.2,.9,.2,1) both}.radar svg{color:var(--mu);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.radar svg.on{color:var(--ve)}
+@keyframes grow{from{transform:scale(.05)}}
+h3.h{margin:30px 0 10px;font-size:21px}
+.box{background:rgba(0,0,0,.3);border:1px solid var(--pb);border-radius:14px;padding:14px;white-space:pre-wrap;word-break:break-word;position:relative;overflow:hidden}.box.sc::after{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--ac);box-shadow:0 0 14px var(--ac);animation:scan 1s .1s ease-out both}
+mark{background:rgba(255,184,77,.38);color:inherit;border-bottom:3px solid var(--ve);padding:0 2px;border-radius:3px}mark.on{outline:2px solid var(--tx)}
+.strip{height:10px;border-radius:6px;background:rgba(255,255,255,.1);position:relative;overflow:hidden;margin:0 0 10px}.strip i{position:absolute;top:0;bottom:0;background:var(--ve);border-radius:4px;transform-origin:left;animation:grow2 .7s .3s both}@keyframes grow2{from{transform:scaleX(0)}}
+.fc{display:grid;grid-template-columns:50px 1fr;gap:14px;padding:14px;margin-bottom:12px;animation:rise .5s both;animation-delay:calc(var(--i)*90ms)}@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+.fc .b{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(255,184,77,.16);color:var(--ve)}.fc h4{margin:0 0 4px;font-size:18px}.fc .q{border-left:3px solid var(--ve);padding-left:10px;font-style:italic;margin:6px 0;word-break:break-word}
+.sev{font-size:13px;color:var(--mu)}.sev b{color:var(--ve);letter-spacing:2px}
+.lk{padding:14px;margin-bottom:10px}.lk p{margin:8px 0 0;font-size:16px}
+.ck{display:flex;gap:12px;align-items:flex-start;padding:10px 4px;border-top:1px solid var(--pb);cursor:pointer}.ck input{width:22px;height:22px;accent-color:var(--ac);flex:none;margin-top:3px}.ck input:checked+span{text-decoration:line-through;color:var(--mu)}
+.prog{height:8px;background:rgba(255,255,255,.12);border-radius:6px;overflow:hidden;margin:8px 0}.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2));transition:width .4s}
+.acts{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.chip{display:inline-block;font-size:14px;border:1px solid var(--pb);border-radius:99px;padding:2px 10px;color:var(--mu);margin:0 6px 6px 0}
+.warn{border:1px solid var(--ve);background:rgba(255,184,77,.1);border-radius:12px;padding:10px 14px;font-size:16px;margin:10px 0}
+.note{font-size:15px;color:var(--mu);border-top:1px solid var(--pb);padding-top:12px;margin-top:20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}.cards article{padding:16px}.cards .b{color:var(--ac);margin-bottom:6px}.cards h4{margin:0 0 4px}.cards p{margin:0 0 8px;font-size:16px;color:var(--mu)}.cards button{margin-top:4px;font-size:15px;min-height:38px}
+.bar{display:grid;grid-template-columns:minmax(120px,1.2fr) 3fr 36px;gap:10px;align-items:center;margin:6px 0;font-size:15px}.bar i{height:10px;border-radius:6px;background:linear-gradient(90deg,var(--ac),var(--ac2));width:var(--w);animation:grow2 .7s both;transform-origin:left}.bar b{text-align:right}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;padding:16px}
+footer{max-width:980px;margin:0 auto;padding:0 18px 40px;font-size:15px;color:var(--mu)}
+.ai{display:flex;gap:10px;align-items:flex-start;margin:0 0 12px;font-size:16px}.ai input{width:20px;height:20px;accent-color:var(--ac);margin-top:4px;flex:none}
+.hl{list-style:none;padding:0;margin:0 0 10px}.hi-item{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:8px 0;border-top:1px solid var(--pb)}.i2{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--c);color:#06101d;font-weight:900}
+.skip{position:absolute;left:-999px;top:8px;z-index:9;background:#fff;color:#000;padding:8px 12px;border-radius:8px}.skip:focus{left:8px}
+footer a{color:var(--ac)}
+[hidden]{display:none!important}
+@media (max-width:760px){.hero,.rtop{grid-template-columns:1fr}.shield{max-width:170px}}
+@media print{body{background:#fff;color:#000}body::before,header,.hero,.modes,.panel,.samples,#learn,#stats,footer,.acts,.shield{display:none!important}.g,.box,.state{background:#fff!important;color:#000!important;border-color:#888!important;backdrop-filter:none}.mu,.small,.note,.sev{color:#333!important}h1{color:#000;background:none}}
+@media (prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.4 8.2-8 9-4.6-.8-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+<symbol id="i-msg" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-5 4v-4H4z"/></symbol>
+<symbol id="i-img" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M4 18l5-5 4 4 3-3 4 4"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-9M15 6h6v6"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 5a3 3 0 0 1 0 6M18 20a5 5 0 0 0-3-4.6"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8h6M9 11h6M10 8c4 0 4 5 0 5l4 4"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+<symbol id="i-speaker" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></symbol>
+<symbol id="i-print" viewBox="0 0 24 24"><path d="M7 9V3h10v6M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><rect x="7" y="14" width="10" height="7"/></symbol>
+<symbol id="i-learn" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 11l8-4M8 13l8 4"/></symbol>
+</defs></svg>
+
+<a class="skip" href="#top">Skip to main content</a>
+<header class="top"><a href="#top"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg> ScamShield Bharat</a>
+<nav aria-label="Sections"><a href="#learn">Know the signs</a><a href="#stats">How it learns</a><a href="/about">About</a><a href="/resources">Help &amp; FAQ</a></nav>
+<label>Explain in <select id="lang"><option value="en">English</option><option value="hi">हिन्दी</option><option value="ta">தமிழ்</option></select></label></header>
+<noscript><p style="padding:16px;margin:0;background:#fff;color:#000">ScamShield needs JavaScript to run. Please enable it, or read the <a href="/resources">Help page</a>.</p></noscript>
+<main id="top">
+<section class="hero"><div>
+<h1>Before you trust it, check it.</h1>
+<p class="sub">Analyze suspicious investment messages, screenshots, and links for potential scam warning signs.</p>
+<p class="small">Detect → Explain → Verify → Protect. In English, हिन्दी and தமிழ்.</p></div>
+<svg class="shield" viewBox="0 0 240 260" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2ee6c5"/><stop offset="1" stop-color="#6b7bff"/></linearGradient></defs>
+<g class="rings"><circle cx="120" cy="120" r="70"/><circle cx="120" cy="120" r="95"/><circle cx="120" cy="120" r="118"/></g>
+<path d="M120 30l80 32v62c0 52-34 86-80 106-46-20-80-54-80-106V62z" fill="url(#sg)" fill-opacity=".2" stroke="url(#sg)" stroke-width="3"/>
+<path class="tick" d="M82 128l28 28 52-60" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><rect class="beam" x="44" y="60" width="152" height="4" rx="2" fill="#2ee6c5"/></svg></section>
+
+<div class="modes" role="tablist" aria-label="What do you want to check?">
+<button class="mode" role="tab" data-m="text" aria-selected="true"><svg class="ic big" aria-hidden="true"><use href="#i-msg"/></svg><b>Analyze Message</b><small>WhatsApp, SMS, email, post</small></button>
+<button class="mode" role="tab" data-m="image" aria-selected="false"><svg class="ic big" aria-hidden="true"><use href="#i-img"/></svg><b>Upload Screenshot</b><small>We read the text for you</small></button>
+<button class="mode" role="tab" data-m="url" aria-selected="false"><svg class="ic big" aria-hidden="true"><use href="#i-link"/></svg><b>Check Link</b><small>Without opening it</small></button>
+<button class="mode" role="tab" data-m="voice" aria-selected="false"><svg class="ic big" aria-hidden="true"><use href="#i-mic"/></svg><b>Use Voice</b><small>Speak, then listen</small></button></div>
+
+<div class="g panel">
+<div id="m-text"><label for="text">Paste the suspicious message</label><textarea id="text" maxlength="5000"></textarea></div>
+<div id="m-image" hidden><label class="drop" id="drop" for="file"><svg class="ic big" aria-hidden="true"><use href="#i-img"/></svg><b>Drop a screenshot here, or tap to choose</b><span>PNG, JPEG or WebP · up to 5 MB</span><img id="pv" alt="Preview of your screenshot" hidden><i class="scan"></i></label><input class="vh" id="file" type="file" accept="image/png,image/jpeg,image/webp"></div>
+<div id="m-url" hidden><label for="url">Paste the suspicious link</label><input id="url" type="text" inputmode="url" autocomplete="off" placeholder="https://"><div id="live" aria-live="polite"></div></div>
+<div id="m-voice" hidden><div class="micwrap"><button id="mic" class="mic" type="button" aria-pressed="false" aria-label="Start or stop speaking"><svg class="ic big" aria-hidden="true"><use href="#i-mic"/></svg></button><div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><p id="mst" aria-live="polite">Tap the mic and speak.</p></div><p id="heard" class="box" hidden></p><p class="small">Voice input uses your browser's speech service. Chrome and Edge send the audio to their servers to turn it into text. Do not speak OTPs, passwords or PINs.</p></div>
+<label class="ai" id="aiwrap" hidden><input type="checkbox" id="useai"><span>Add an AI explanation <span class="small">(sends this text, with numbers and IDs masked, to the AI provider this server is configured with. Off by default.)</span></span></label>
+<button id="go" class="btn">Analyze</button><p id="err" role="alert"></p>
+<div class="samples"><span>Try a fictional example:</span><span id="smp"></span></div></div>
+<p class="small">ScamShield Bharat identifies potential warning signs. It does not provide investment advice or guarantee that content is legitimate or fraudulent.</p>
+
+<section id="out" tabindex="-1" aria-live="polite"></section>
+
+<section id="history"><h3 class="h">Your recent checks <span class="small">saved only in this browser, never the message itself</span></h3><div class="g" style="padding:12px 16px"><ul id="hlist" class="hl"></ul><button class="gh" id="hclear">Delete all history and my shared fragments</button></div></section>
+<section id="learn"><h3 class="h">Know the signs</h3><div class="cards" id="cards"></div></section>
+<section id="stats"><h3 class="h">How ScamShield learns <span class="small">opt-in, no full messages stored, a human approves every new phrase</span></h3><div class="g" style="padding:16px" id="sbody"></div></section>
+</main>
+<footer><p>Privacy: what you submit is analysed in memory and not stored, unless you choose to share masked fragments. Never enter OTPs, passwords or PINs here; we will never ask for them.</p><p><a href="/about">How it works</a> · <a href="/resources">Help &amp; FAQ</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p></footer>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const VL={en:"en-IN",hi:"hi-IN",ta:"ta-IN"},NM={en:"English",hi:"Hindi",ta:"Tamil"},ic=(n,c="")=>`<svg class="ic ${c}" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+const ORDER=["guaranteed_returns","unrealistic_claims","urgency","scarcity","sensitive_info","payment_request","impersonation","social_engineering","suspicious_link","community_pattern"];
+const IC={guaranteed_returns:"star",unrealistic_claims:"trend",urgency:"clock",scarcity:"users",sensitive_info:"lock",payment_request:"coin",impersonation:"user",social_engineering:"bolt",suspicious_link:"link",community_pattern:"learn"};
+const SEV={sensitive_info:5,suspicious_link:5,payment_request:3,guaranteed_returns:3,unrealistic_claims:3,impersonation:2,urgency:2,scarcity:2,social_engineering:2,community_pattern:2};
+let mode="text",busy=false,spoken="",chosen=null,rec=null,TITLES={};
+const setErr=m=>$("#err").textContent=m||"",ai=()=>!$("#aiwrap").hidden&&$("#useai").checked;
+function setMode(m){mode=m;setErr();document.querySelectorAll(".mode").forEach(b=>b.setAttribute("aria-selected",b.dataset.m==m));["text","image","url","voice"].forEach(k=>$("#m-"+k).hidden=k!=m)}
+document.querySelectorAll(".mode").forEach(b=>b.onclick=()=>setMode(b.dataset.m));
+async function call(path,opt){let r,j={};try{r=await fetch(path,opt)}catch(e){throw new Error("Could not reach the server. Check your connection and try again.")}
+ try{j=await r.json()}catch(e){}if(!r.ok)throw new Error(j.detail||"Something went wrong. Please try again.");return j}
+function anatomy(k){const p=k.host.split("."),n=p.length>2&&["gov.in","co.in","org.in","nic.in","ac.in"].includes(p.slice(-2).join("."))?3:2,sub=p.slice(0,-n).join("."),reg=p.slice(-n).join(".");
+ const r=k.closest&&k.closest!=reg?[...reg].map((c,i)=>c==k.closest[i]?esc(c):`<u>${esc(c)}</u>`).join(""):esc(reg);
+ return `<code class="an">${k.https===null?"":`<span class="${k.https?"ok":"bad"}">${k.https?"https://":"http://"}</span>`}<span class="sub2">${esc(sub?sub+".":"")}</span><b class="${k.official?"ok":k.flagged?"bad":""}">${r}</b></code>`}
+$("#url").oninput=()=>{try{const v=$("#url").value.trim(),u=new URL(/:\/\//.test(v)?v:"http://"+v);$("#live").innerHTML=v&&u.hostname.includes(".")?anatomy({host:u.hostname,https:/:\/\//.test(v)?u.protocol=="https:":null}):""}catch(e){$("#live").innerHTML=""}};
+function setFile(f){setErr();if(!f)return;if(!/^image\/(png|jpeg|webp)$/.test(f.type)){setErr("Please choose a PNG, JPEG or WebP image.");return}
+ if(f.size>5*1048576){setErr("That image is larger than 5 MB.");return}chosen=f;$("#pv").src=URL.createObjectURL(f);$("#pv").hidden=false}
+$("#file").onchange=()=>setFile($("#file").files[0]);
+const dz=$("#drop");["dragenter","dragover"].forEach(v=>dz.addEventListener(v,e=>{e.preventDefault();dz.classList.add("over")}));
+["dragleave","drop"].forEach(v=>dz.addEventListener(v,e=>{e.preventDefault();dz.classList.remove("over");if(v=="drop")setFile(e.dataTransfer.files[0])}));
+async function go(){
+ if(busy)return;const lang=$("#lang").value,j=b=>({method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});let req,kind="text";setErr();
+ if(mode=="image"){if(!chosen){setErr("Please choose a screenshot first.");return}const fd=new FormData();fd.append("file",chosen);fd.append("lang",lang);fd.append("use_llm",ai());req=["/api/analyze/image",{method:"POST",body:fd}]}
+ else if(mode=="url"){const u=$("#url").value.trim();if(!u){setErr("Please paste a link first.");return}req=["/api/analyze/url",j({url:u,lang})]}
+ else{const t=$("#text").value.trim();if(!t){setErr("Please paste or speak a message first.");return}req=["/api/analyze/text",j({text:t,lang,use_llm:ai()})]}
+ busy=true;$("#go").disabled=true;$("#go").textContent="Analyzing…";dz.classList.add("busy");$("#out").setAttribute("aria-busy","true");
+ try{const r=await call(...req);render(r);saveHist(r)}catch(e){setErr(e.message)}finally{busy=false;$("#go").disabled=false;$("#go").textContent="Analyze";dz.classList.remove("busy");$("#out").removeAttribute("aria-busy");loadStats()}}
+const gauge=(a,l)=>`<svg viewBox="0 0 200 118" class="gauge" role="img" aria-label="${esc(l)}"><path d="M20 100A80 80 0 0 1 60 30.7" class="s lo"/><path d="M60 30.7A80 80 0 0 1 140 30.7" class="s ve"/><path d="M140 30.7A80 80 0 0 1 180 100" class="s hi"/><g class="needle" style="--a:${a}deg"><line x1="100" y1="100" x2="100" y2="38"/><circle cx="100" cy="100" r="8"/></g></svg>`;
+function radar(hit){const n=ORDER.length,pt=(i,r)=>{const a=(-90+i*360/n)*Math.PI/180;return[100+r*Math.cos(a),100+r*Math.sin(a)]},poly=r=>ORDER.map((_,i)=>pt(i,r).join(",")).join(" ");
+ return `<svg viewBox="-12 -12 224 224" class="radar" role="img" aria-label="Pattern fingerprint: ${esc(Object.keys(hit).map(k=>TITLES[k]||k).join(", ")||"none")}">`+[30,60,90].map(r=>`<polygon points="${poly(r)}" class="ring"/>`).join("")
+ +ORDER.map((c,i)=>{const[x,y]=pt(i,90),[ix,iy]=pt(i,108);return `<line x1="100" y1="100" x2="${x}" y2="${y}" class="ax"/><svg x="${ix-9}" y="${iy-9}" width="18" height="18" viewBox="0 0 24 24" class="${hit[c]?"on":""}"><use href="#i-${IC[c]}"/></svg>`}).join("")
+ +`<polygon class="val" points="${ORDER.map((c,i)=>pt(i,hit[c]?34+11*hit[c]:8).join(",")).join(" ")}"/></svg>`}
+function render(r){
+ const h=r.headings,hit={};r.findings.forEach(f=>hit[f.id]=SEV[f.id]||3);let p=0,t="";
+ const sp=r.findings.flatMap(f=>f.evidence.map(e=>[e.start,e.end,f.id])).sort((a,b)=>a[0]-b[0]);
+ for(const [s,e,id] of sp){if(s<p)continue;t+=esc(r.text.slice(p,s))+`<mark data-f="${id}">`+esc(r.text.slice(s,e))+"</mark>";p=e}t+=esc(r.text.slice(p));
+ const L=Math.max(1,r.text.length),strip=sp.map(([s,e])=>`<i style="left:${s/L*100}%;width:${Math.max(1.2,(e-s)/L*100)}%"></i>`).join("");
+ spoken=[r.state_label,r.summary,...r.steps].join(". ");
+ const fam=`${r.state_label}. ${r.findings.map(f=>f.title).join("; ")}. ${r.steps[0]} ${r.steps[1]}`;
+ const cls={LOW:"lo",VERIFY:"ve",HIGH:"hi"}[r.state];
+ $("#out").innerHTML=`<div class="rtop"><div><div class="state ${cls}"><span class="i" aria-hidden="true">${{LOW:"✔",VERIFY:"?",HIGH:"!"}[r.state]}</span><div><h2>${esc(r.state_label)}</h2><p>${esc(r.summary)}</p></div></div>${gauge({LOW:-60,VERIFY:0,HIGH:60}[r.state],r.state_label)}</div>
+ <div class="g rad">${radar(hit)}<h3>${r.findings.length} / ${ORDER.length}</h3></div></div>
+ <p style="margin-top:12px"><span class="chip">Detected language: ${NM[r.detected_language]}</span><span class="chip">${r.mode=="rules+llm"?"Analysis: rules + AI explanation":"Analysis: rules (no AI model used)"}</span>${r.ocr_confidence!=null?`<span class="chip">OCR confidence ${r.ocr_confidence}%</span>`:""}
+ ${r.detected_language!=r.lang?`<button class="gh" id="sw">Message looks ${NM[r.detected_language]}. Explain in ${NM[r.detected_language]}</button>`:""}</p>
+ ${r.ocr_missing&&r.ocr_missing.length?`<p class="warn">Text recognition for ${esc(r.ocr_missing.join(", "))} is not installed on this server, so only ${esc(r.ocr_languages.join(", "))} text can be read reliably.</p>`:""}
+ ${r.ocr_confidence!=null&&r.ocr_confidence<70?`<p class="warn">The text may have been misread. Check the extracted text below before relying on this result.</p>`:""}
+ ${r.ai_summary?`<div class="g" style="padding:14px 16px;margin-top:16px"><b>AI summary</b> <span class="small">(written by an AI model, can make mistakes)</span><p style="margin:6px 0 0">${esc(r.ai_summary)}</p></div>`:""}${r.llm_note?`<p class="warn">${esc(r.llm_note)}</p>`:""}
+ <h3 class="h">${esc(h.evidence)}</h3>${strip?`<div class="strip" aria-hidden="true">${strip}</div>`:""}<div class="box sc">${t}</div>
+ ${r.findings.length?`<h3 class="h">${esc(h.found)}</h3>`+r.findings.map((f,i)=>{const w=SEV[f.id]||3,d=w>=5?3:w>=3?2:1;return `<article class="g fc" style="--i:${i}"><div class="b">${ic(IC[f.id])}</div><div><h4>${esc(f.title)}</h4><div class="sev" aria-label="Weight ${d} of 3">Weight <b>${"●".repeat(d)}${"○".repeat(3-d)}</b> ${f.source=="ai"?`<span class="chip">AI-suggested, quote verified in your text</span>`:""}</div>${f.evidence.map(e=>`<p class="q">“${esc(e.text)}”</p>`).join("")}<p>${esc(f.why)}</p></div></article>`}).join(""):""}
+ ${r.links.length?`<h3 class="h">${esc(h.links)}</h3>`+r.links.map(k=>`<div class="g lk">${anatomy(k)}<p>${k.notes.map(esc).join(" ")}</p></div>`).join(""):""}
+ <h3 class="h">${esc(h.steps)}</h3><div class="g" style="padding:14px 16px"><div class="prog" aria-hidden="true"><i id="pg"></i></div><p class="small" id="pgt"></p>${r.steps.map(s=>`<label class="ck"><input type="checkbox"><span>${esc(s)}</span></label>`).join("")}</div>
+ ${mode!="url"?`<div class="g" id="contrib" style="padding:14px 16px;margin-top:16px"><b>Help ScamShield learn</b> <span class="small">(optional)</span><p class="small" style="margin:4px 0 8px">Was this a scam? Only masked 2-3 word fragments are kept (numbers, links and IDs removed), never the full message. You can delete them afterwards.</p><label class="ai"><input type="checkbox" id="cons"><span>I agree to share anonymised fragments of this message.</span></label><div class="acts" style="margin:8px 0 0"><button class="gh" data-lb="scam">It was a scam</button><button class="gh" data-lb="not_scam">Not a scam</button><button class="gh" data-lb="unsure">Not sure</button></div><p id="cmsg" class="small" role="status"></p></div>`:""}
+ <div class="acts">${"speechSynthesis" in window?`<button class="gh" id="say">${ic("speaker")} Listen</button>`:""}<button class="gh" id="cp">${ic("copy")} Copy family alert</button><button class="gh" id="pr">${ic("print")} Save as PDF</button></div>
+ <p class="note"><b>${esc(h.important)}:</b> ${esc(r.disclaimer)}</p>`;
+ const upd=()=>{const b=[...document.querySelectorAll(".ck input")],n=b.filter(x=>x.checked).length;$("#pg").style.width=n/b.length*100+"%";$("#pgt").textContent=`${n} / ${b.length}`};
+ document.querySelectorAll(".ck input").forEach(x=>x.onchange=upd);upd();
+ document.querySelectorAll("#out .fc").forEach((a,i)=>{const id=r.findings[i].id,on=v=>document.querySelectorAll(`mark[data-f="${id}"]`).forEach(m=>m.classList.toggle("on",v));
+  a.tabIndex=0;["mouseenter","focus"].forEach(v=>a.addEventListener(v,()=>on(true)));["mouseleave","blur"].forEach(v=>a.addEventListener(v,()=>on(false)))});
+ if($("#say"))$("#say").onclick=()=>{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(spoken);u.lang=VL[r.lang];u.rate=.9;speechSynthesis.speak(u)};
+ $("#cp").onclick=async()=>{try{if(navigator.share)await navigator.share({text:fam});else{await navigator.clipboard.writeText(fam);$("#cp").innerHTML=ic("copy")+" Copied"}}catch(e){}};
+ $("#pr").onclick=()=>window.print();
+ document.querySelectorAll("[data-lb]").forEach(b=>b.onclick=async()=>{if(!$("#cons").checked){$("#cmsg").textContent="Please tick the box to agree first.";return}
+  try{const j=await call("/api/contribute",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text:r.text,lang:r.lang,label:b.dataset.lb,consent:true})});
+   let t=[];try{t=JSON.parse(localStorage.getItem("scamshield.contrib")||"[]")}catch(e){}t.push(j.token);try{localStorage.setItem("scamshield.contrib",JSON.stringify(t))}catch(e){}
+   $("#cmsg").innerHTML=`Thank you. Shared ${j.shared.length} fragments: <i>${esc(j.shared.slice(0,8).join(" · "))}${j.shared.length>8?" …":""}</i> <button class="gh" id="cdel">Delete</button>`;
+   $("#cdel").onclick=async()=>{try{await call("/api/contribute/"+j.token,{method:"DELETE"});$("#cmsg").textContent="Deleted.";loadStats()}catch(e){$("#cmsg").textContent=e.message}};loadStats()}catch(e){$("#cmsg").textContent=e.message}});
+ if($("#sw"))$("#sw").onclick=()=>{$("#lang").value=r.detected_language;onLang()};
+ if(r.ocr_text!=null)$("#out").insertAdjacentHTML("beforeend",`<h3 class="h">Text we read from your screenshot</h3><div class="box">${esc(r.ocr_text)}</div>`);
+ $("#out").focus({preventScroll:true});$("#out").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})}
+async function loadLearn(){try{const d=await call("/api/indicators?lang="+$("#lang").value);TITLES=Object.fromEntries(d.indicators.map(i=>[i.id,i.title]));
+ $("#cards").innerHTML=d.indicators.map(i=>`<article class="g"><div class="b">${ic(IC[i.id],"big")}</div><h4>${esc(i.title)}</h4><p>${esc(i.why)}</p><p class="q" style="font-style:italic">“${esc(i.example)}”</p><button class="gh" data-ex="${esc(i.example)}">Try this example</button></article>`).join("");
+ document.querySelectorAll("[data-ex]").forEach(b=>b.onclick=()=>{setMode("text");$("#text").value=b.dataset.ex;go()})}catch(e){}}
+async function loadStats(){try{const s=await call("/api/learning"),e=s.evaluation,b=s.by_label,m=Math.max(1,...Object.values(b)),pc=v=>v==null?"n/a":Math.round(v*100)+"%";
+ $("#sbody").innerHTML=`<ol class="small"><li><b>Contribute:</b> users who agree share masked 2-3 word fragments plus a label.</li><li><b>Mine:</b> phrases that recur in at least ${s.min_support} scam reports, and rarely in non-scam reports, become candidates. Wording that matches 3 or more similar reports is also recognised.</li><li><b>Approve:</b> a human reviewer approves each phrase before it can affect any result.</li></ol>
+ <div class="sgrid" style="padding:0"><div><h4>Checks so far: ${s.checks} · Shared by users: ${s.contributions}</h4>${["scam","not_scam","unsure"].map(k=>`<div class="bar"><span>${{scam:"Reported scam",not_scam:"Reported not scam",unsure:"Not sure"}[k]}</span><i style="--w:${(b[k]||0)/m*100}%"></i><b>${b[k]||0}</b></div>`).join("")}</div>
+ <div><h4>Measured on ${e.n} labelled examples</h4><p class="small">Scams that were flagged: ${pc(e.recall)} · Flags that were real scams: ${pc(e.precision)} · Scams missed: ${e.missed}</p><h4>Learned phrases (${s.approved.length}) · waiting for review: ${s.pending_candidates}</h4>${s.approved.map(a=>`<span class="chip">${esc(a.phrase)} ×${a.support}</span>`).join("")||'<p class="mu">None approved yet.</p>'}</div></div>`}catch(e){}}
+function onLang(){loadLearn().then(()=>{loadStats();drawHist()});if($("#out").innerHTML.trim()&&!busy)go()}
+$("#lang").onchange=onLang;$("#go").onclick=go;
+$("#mic").onclick=()=>{const R=window.SpeechRecognition||window.webkitSpeechRecognition;
+ if(!R){setErr("Voice input is not supported in this browser (try Chrome or Edge). You can type or paste the message instead.");return}
+ if(rec){rec.stop();return}setErr();rec=new R();rec.lang=VL[$("#lang").value];rec.interimResults=true;rec.continuous=false;
+ const done=()=>{rec=null;$("#mic").classList.remove("on");$("#mic").setAttribute("aria-pressed","false")};
+ rec.onstart=()=>{$("#mic").classList.add("on");$("#mic").setAttribute("aria-pressed","true");$("#mst").textContent="Listening… tap again to stop."};
+ rec.onresult=e=>{let s="";for(const r of e.results)s+=r[0].transcript;$("#heard").hidden=false;$("#heard").textContent=s;$("#text").value=s;if(e.results[e.results.length-1].isFinal){$("#mst").textContent="Analyzing what we heard…";go()}};
+ rec.onerror=e=>{setErr(e.error=="not-allowed"?"Microphone access was blocked. Allow it in your browser, or type the message instead.":"We could not hear that. Please try again, or type the message instead.");$("#mst").textContent="Tap the mic and speak.";done()};
+ rec.onend=done;try{rec.start()}catch(e){done()}};
+fetch("/api/demo-cases").then(r=>r.json()).then(d=>d.cases.forEach(c=>{const b=document.createElement("button");b.className="gh";b.textContent=c.label;b.onclick=()=>{setMode("text");$("#text").value=c.text;go()};$("#smp").appendChild(b)})).catch(()=>{});
+const HK="scamshield.history",hist=()=>{try{return JSON.parse(localStorage.getItem(HK)||"[]")}catch(e){return[]}},store=a=>{try{localStorage.setItem(HK,JSON.stringify(a.slice(0,30)))}catch(e){}};
+function saveHist(r){store([{id:Date.now(),s:r.state,c:r.findings.map(f=>f.id),k:mode},...hist()]);drawHist()}
+function drawHist(){const a=hist(),sh={LOW:"✔",VERIFY:"?",HIGH:"!"},cl={LOW:"lo",VERIFY:"ve",HIGH:"hi"},nm={LOW:"Low apparent risk",VERIFY:"Needs verification",HIGH:"High-risk indicators"};
+ $("#hlist").innerHTML=a.length?a.map(x=>`<li class="hi-item"><span class="i2 ${cl[x.s]}" aria-hidden="true">${sh[x.s]}</span><span><b>${nm[x.s]}</b> · ${esc(x.k)} · ${new Date(x.id).toLocaleString()}<br><span class="small">${x.c.map(c=>esc(TITLES[c]||c)).join(", ")||"No warning categories"}</span></span><button class="gh" data-del="${x.id}" aria-label="Delete this entry">Delete</button></li>`).join(""):'<li class="mu">No saved checks yet.</li>';
+ $("#hclear").hidden=!a.length;document.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>{store(hist().filter(x=>x.id!=b.dataset.del));drawHist()})}
+$("#hclear").onclick=async()=>{store([]);drawHist();let t=[];try{t=JSON.parse(localStorage.getItem("scamshield.contrib")||"[]");localStorage.removeItem("scamshield.contrib")}catch(e){}for(const k of t){try{await call("/api/contribute/"+k,{method:"DELETE"})}catch(e){}}loadStats()};
+fetch("/api/health").then(r=>r.json()).then(h=>{$("#aiwrap").hidden=!h.llm}).catch(()=>{});
+setMode("text");loadLearn().then(()=>{loadStats();drawHist()});
+if("serviceWorker" in navigator&&location.protocol!="file:")navigator.serviceWorker.register("/sw.js").catch(()=>{});
+</script>
+</body>
+</html>

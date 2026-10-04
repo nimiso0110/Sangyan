@@ -1,0 +1,95 @@
+"""Report text per language. Add a language by adding one dict with the same keys (a test checks completeness).
+NOTE: Hindi and Tamil were drafted with AI assistance and need native-speaker review before public use."""
+
+L = {
+"en": {
+ "state": {"LOW": "LOW APPARENT RISK", "VERIFY": "NEEDS VERIFICATION", "HIGH": "HIGH-RISK INDICATORS DETECTED"},
+ "sum": {
+  "LOW": "No significant warning indicators were found in the information provided. This does not guarantee the content is genuine.",
+  "VERIFY": "Some characteristics need independent verification before you act.",
+  "HIGH": "This content contains multiple high-risk indicators commonly associated with financial scams. Verify independently before taking any financial action."},
+ "cat": {
+  "guaranteed_returns": ("Guaranteed-return language", "A return is presented as certain. Financial outcomes involve uncertainty, so this warrants independent verification."),
+  "unrealistic_claims": ("Unusually aggressive return claim", "The claimed return looks far above normal market uncertainty and warrants verification."),
+  "urgency": ("Pressure to act quickly", "Pressure to act immediately reduces the time you have to verify independently."),
+  "scarcity": ("Scarcity or exclusivity pressure", "Limited slots, VIP or secret access can push people to decide before checking."),
+  "sensitive_info": ("Request for sensitive information", "OTPs, PINs and passwords should not be shared. Banks and brokers generally do not ask for them in messages."),
+  "payment_request": ("Payment request", "A direct payment request in unsolicited investment communication warrants independent verification."),
+  "impersonation": ("Claims to represent an organisation", "This communication claims to represent an organisation. Independently verify the sender through an official source."),
+  "social_engineering": ("Fear or threat pressure", "Threats such as account closure or legal action are used to rush people into acting."),
+  "community_pattern": ("Matches patterns reported by other users", "Wording in this message resembles messages that other users reported as scams. This is a signal to verify, not proof."),
+  "suspicious_link": ("Link that needs verification", "The link has characteristics that warrant additional verification before you open it.")},
+ "link": {
+  "look": "Looks similar to the official site {x}.", "brand": "Uses an official organisation's name but is not on its known domain.",
+  "short": "Link shortener: the real destination is hidden.", "nohttps": "The address does not use HTTPS (not encrypted).",
+  "ip": "The address is a bare IP number, not a normal name.", "userinfo": "The address contains '@', which can disguise the real site.",
+  "tld": "Unusual domain ending for a financial organisation.", "odd": "Unusual address structure.",
+  "ok": "Matches a known official domain. Still type the address yourself.",
+  "nothing": "No lookalike or structural warning found. The site itself was not opened or verified."},
+ "h": {"found": "What we found", "evidence": "Your content, with flagged phrases", "links": "Links", "steps": "What you can do now", "important": "Important"},
+ "steps": ["Do not transfer money based only on this message.", "Never share OTPs, passwords, PINs or authentication codes.",
+  "Avoid opening suspicious links. Type the official address yourself.", "Verify the organisation through an official source, not through contact details in the message.",
+  "Keep screenshots. If you suspect fraud, report it through official channels (for example cybercrime.gov.in or helpline 1930)."],
+ "disc": "This analysis identifies potential warning signs based on the information provided. It is not a legal determination, a guarantee that content is genuine or fraudulent, or an investment recommendation.",
+ "refusal": "I can help identify potential fraud indicators and explain the content, but I can't provide investment recommendations or predict investment outcomes."},
+"hi": {
+ "state": {"LOW": "कम स्पष्ट जोखिम", "VERIFY": "सत्यापन ज़रूरी", "HIGH": "उच्च जोखिम के संकेत मिले"},
+ "sum": {
+  "LOW": "दी गई जानकारी में कोई बड़ा चेतावनी-संकेत नहीं मिला। इसका मतलब यह नहीं कि सामग्री असली है।",
+  "VERIFY": "कुछ बातों को कदम उठाने से पहले स्वतंत्र रूप से जाँचना ज़रूरी है।",
+  "HIGH": "इस सामग्री में वित्तीय ठगी से जुड़े कई उच्च जोखिम संकेत हैं। कोई भी वित्तीय कदम उठाने से पहले स्वतंत्र रूप से जाँचें।"},
+ "cat": {
+  "guaranteed_returns": ("रिटर्न की गारंटी वाली भाषा", "रिटर्न को पक्का बताया गया है। वित्तीय नतीजों में अनिश्चितता होती है, इसलिए इसे स्वतंत्र रूप से जाँचें।"),
+  "unrealistic_claims": ("बहुत ज़्यादा रिटर्न का दावा", "बताया गया रिटर्न सामान्य बाज़ार से बहुत ऊपर लगता है। इसे जाँचना ज़रूरी है।"),
+  "urgency": ("जल्दबाज़ी का दबाव", "तुरंत कदम उठाने का दबाव आपको जाँचने का समय नहीं देता।"),
+  "scarcity": ("सीमित मौके या खास पहुँच का दबाव", "सीमित सीट, VIP या गुप्त पहुँच के नाम पर जाँचने से पहले फ़ैसला करवाया जाता है।"),
+  "sensitive_info": ("संवेदनशील जानकारी की माँग", "OTP, PIN और पासवर्ड साझा नहीं करने चाहिए। बैंक और ब्रोकर आम तौर पर मैसेज में इन्हें नहीं माँगते।"),
+  "payment_request": ("पैसे भेजने की माँग", "अनचाहे निवेश संदेश में सीधे पैसे माँगना स्वतंत्र जाँच की माँग करता है।"),
+  "impersonation": ("किसी संस्था का प्रतिनिधि होने का दावा", "यह संदेश किसी संस्था का प्रतिनिधि होने का दावा करता है। भेजने वाले को आधिकारिक स्रोत से जाँचें।"),
+  "social_engineering": ("डर या धमकी का दबाव", "खाता बंद होने या कानूनी कार्रवाई जैसी धमकियों से जल्दी कदम उठवाया जाता है।"),
+  "community_pattern": ("अन्य उपयोगकर्ताओं द्वारा बताए गए पैटर्न से मेल", "इस संदेश की भाषा उन संदेशों से मिलती है जिन्हें अन्य उपयोगकर्ताओं ने ठगी बताया है। यह जाँचने का संकेत है, सबूत नहीं।"),
+  "suspicious_link": ("ऐसा लिंक जिसे जाँचना ज़रूरी है", "इस लिंक में ऐसी बातें हैं जिन्हें खोलने से पहले जाँचना ज़रूरी है।")},
+ "link": {
+  "look": "यह आधिकारिक साइट {x} जैसा दिखता है।", "brand": "आधिकारिक संस्था का नाम इस्तेमाल करता है, पर उसके ज्ञात डोमेन पर नहीं है।",
+  "short": "छोटा लिंक: असली पता छिपा है।", "nohttps": "पता HTTPS का उपयोग नहीं करता (एन्क्रिप्टेड नहीं)।",
+  "ip": "पता सामान्य नाम नहीं, सिर्फ़ IP नंबर है।", "userinfo": "पते में '@' है, जो असली साइट छिपा सकता है।",
+  "tld": "वित्तीय संस्था के लिए असामान्य डोमेन।", "odd": "असामान्य पता संरचना।",
+  "ok": "ज्ञात आधिकारिक डोमेन से मेल खाता है। फिर भी पता ख़ुद टाइप करें।",
+  "nothing": "कोई नकली-जैसी या संरचना संबंधी चेतावनी नहीं मिली। साइट खोली या सत्यापित नहीं की गई।"},
+ "h": {"found": "हमें क्या मिला", "evidence": "आपकी सामग्री, चिह्नित वाक्यांशों के साथ", "links": "लिंक", "steps": "आप अभी क्या कर सकते हैं", "important": "ज़रूरी"},
+ "steps": ["सिर्फ़ इस मैसेज के आधार पर पैसे न भेजें।", "OTP, पासवर्ड, PIN या ऑथेंटिकेशन कोड किसी को न बताएँ।",
+  "संदिग्ध लिंक न खोलें। आधिकारिक पता ख़ुद टाइप करें।", "संस्था को आधिकारिक स्रोत से जाँचें, मैसेज में दिए संपर्क से नहीं।",
+  "स्क्रीनशॉट सँभालकर रखें। ठगी का शक हो तो आधिकारिक माध्यम (जैसे cybercrime.gov.in या हेल्पलाइन 1930) से शिकायत करें।"],
+ "disc": "यह विश्लेषण दी गई जानकारी के आधार पर संभावित चेतावनी-संकेत बताता है। यह कानूनी निर्णय, असली या नकली होने की गारंटी, या निवेश सलाह नहीं है।",
+ "refusal": "मैं संभावित ठगी के संकेत पहचानने और सामग्री समझाने में मदद कर सकता हूँ, लेकिन निवेश की सलाह या नतीजों का अनुमान नहीं दे सकता।"},
+"ta": {
+ "state": {"LOW": "குறைந்த வெளிப்படையான ஆபத்து", "VERIFY": "சரிபார்ப்பு தேவை", "HIGH": "அதிக ஆபத்து அறிகுறிகள் கண்டறியப்பட்டன"},
+ "sum": {
+  "LOW": "வழங்கப்பட்ட தகவலில் குறிப்பிடத்தக்க எச்சரிக்கை அறிகுறிகள் இல்லை. இது உள்ளடக்கம் உண்மையானது என்பதற்கான உத்தரவாதம் அல்ல.",
+  "VERIFY": "நடவடிக்கை எடுக்கும் முன் சில விஷயங்களை சுயமாகச் சரிபார்க்க வேண்டும்.",
+  "HIGH": "இந்த உள்ளடக்கத்தில் நிதி மோசடிகளுடன் பொதுவாகத் தொடர்புடைய பல அதிக ஆபத்து அறிகுறிகள் உள்ளன. எந்த நிதி நடவடிக்கைக்கும் முன் சுயமாகச் சரிபார்க்கவும்."},
+ "cat": {
+  "guaranteed_returns": ("வருமான உத்தரவாத மொழி", "வருமானம் உறுதி என்று கூறப்படுகிறது. நிதி முடிவுகளில் நிச்சயமின்மை உண்டு; எனவே சுயமாகச் சரிபார்க்கவும்."),
+  "unrealistic_claims": ("மிக அதிக வருமான கோரிக்கை", "கூறப்படும் வருமானம் சாதாரண சந்தை நிலையை விட மிக அதிகமாகத் தெரிகிறது; சரிபார்க்க வேண்டும்."),
+  "urgency": ("அவசரப்படுத்தும் அழுத்தம்", "உடனே செயல்பட வற்புறுத்துவது சுயமாகச் சரிபார்க்கும் நேரத்தைக் குறைக்கிறது."),
+  "scarcity": ("அரிதான வாய்ப்பு அழுத்தம்", "வரையறுக்கப்பட்ட இடங்கள், VIP அல்லது ரகசிய அணுகல் சரிபார்க்கும் முன் முடிவெடுக்கத் தூண்டும்."),
+  "sensitive_info": ("முக்கிய ரகசியத் தகவல் கோரிக்கை", "OTP, PIN, கடவுச்சொல் ஆகியவற்றைப் பகிரக் கூடாது. வங்கிகள், தரகர்கள் பொதுவாக செய்தியில் இவற்றைக் கேட்பதில்லை."),
+  "payment_request": ("பணம் செலுத்தக் கோரிக்கை", "கேட்காமல் வந்த முதலீட்டுச் செய்தியில் நேரடியாகப் பணம் கேட்பது சுயமாகச் சரிபார்க்கத் தகுந்தது."),
+  "impersonation": ("ஒரு அமைப்பின் பிரதிநிதி என்ற கூற்று", "இந்தச் செய்தி ஒரு அமைப்பின் பிரதிநிதி என்று கூறுகிறது. அனுப்பியவரை அதிகாரப்பூர்வ ஆதாரம் மூலம் சரிபார்க்கவும்."),
+  "social_engineering": ("பயம் அல்லது மிரட்டல் அழுத்தம்", "கணக்கு முடக்கம், சட்ட நடவடிக்கை போன்ற மிரட்டல்கள் அவசரப்படுத்தப் பயன்படுத்தப்படுகின்றன."),
+  "community_pattern": ("பிற பயனர்கள் தெரிவித்த வடிவங்களுடன் பொருத்தம்", "இந்தச் செய்தியின் வார்த்தைகள் பிற பயனர்கள் மோசடி என்று தெரிவித்த செய்திகளைப் போல உள்ளன. இது சரிபார்க்க வேண்டிய அறிகுறி, ஆதாரம் அல்ல."),
+  "suspicious_link": ("சரிபார்க்க வேண்டிய இணைப்பு", "இந்த இணைப்பைத் திறக்கும் முன் கூடுதல் சரிபார்ப்பு தேவைப்படும் அம்சங்கள் உள்ளன.")},
+ "link": {
+  "look": "இது அதிகாரப்பூர்வ தளம் {x} போலத் தெரிகிறது.", "brand": "அதிகாரப்பூர்வ அமைப்பின் பெயரைப் பயன்படுத்துகிறது, ஆனால் அதன் அறியப்பட்ட டொமைனில் இல்லை.",
+  "short": "சுருக்கப்பட்ட இணைப்பு: உண்மையான முகவரி மறைந்துள்ளது.", "nohttps": "முகவரி HTTPS பயன்படுத்தவில்லை (குறியாக்கம் இல்லை).",
+  "ip": "முகவரி சாதாரண பெயர் அல்ல, வெறும் IP எண்.", "userinfo": "முகவரியில் '@' உள்ளது; இது உண்மையான தளத்தை மறைக்கக்கூடும்.",
+  "tld": "நிதி நிறுவனத்துக்கு அசாதாரண டொமைன் முடிவு.", "odd": "அசாதாரண முகவரி அமைப்பு.",
+  "ok": "அறியப்பட்ட அதிகாரப்பூர்வ டொமைனுடன் பொருந்துகிறது. இருந்தாலும் முகவரியை நீங்களே தட்டச்சு செய்யுங்கள்.",
+  "nothing": "போலி போன்ற அல்லது அமைப்பு எச்சரிக்கை இல்லை. தளம் திறக்கப்படவில்லை, சரிபார்க்கப்படவில்லை."},
+ "h": {"found": "நாங்கள் கண்டது", "evidence": "உங்கள் உள்ளடக்கம், குறிக்கப்பட்ட சொற்களுடன்", "links": "இணைப்புகள்", "steps": "நீங்கள் இப்போது செய்யக்கூடியவை", "important": "முக்கியம்"},
+ "steps": ["இந்தச் செய்தியை மட்டும் நம்பி பணம் அனுப்பாதீர்கள்.", "OTP, கடவுச்சொல், PIN அல்லது அங்கீகாரக் குறியீடுகளை யாரிடமும் பகிராதீர்கள்.",
+  "சந்தேகமான இணைப்புகளைத் திறக்காதீர்கள். அதிகாரப்பூர்வ முகவரியை நீங்களே தட்டச்சு செய்யுங்கள்.", "செய்தியில் உள்ள தொடர்பு விவரங்களால் அல்ல, அதிகாரப்பூர்வ ஆதாரத்தின் மூலம் அமைப்பைச் சரிபார்க்கவும்.",
+  "ஸ்கிரீன்ஷாட்டுகளைப் பாதுகாக்கவும். மோசடி என்று சந்தேகித்தால் அதிகாரப்பூர்வ வழிகளில் (எ.கா. cybercrime.gov.in அல்லது 1930) புகாரளிக்கவும்."],
+ "disc": "இந்த பகுப்பாய்வு வழங்கப்பட்ட தகவலின் அடிப்படையில் சாத்தியமான எச்சரிக்கை அறிகுறிகளைக் காட்டுகிறது. இது சட்டப்பூர்வ முடிவோ, உள்ளடக்கம் உண்மையானது அல்லது மோசடி என்பதற்கான உறுதியோ, முதலீட்டு பரிந்துரையோ அல்ல.",
+ "refusal": "சாத்தியமான மோசடி அறிகுறிகளை அடையாளம் காணவும் உள்ளடக்கத்தை விளக்கவும் உதவ முடியும்; ஆனால் முதலீட்டு பரிந்துரைகளையோ முடிவுகளின் கணிப்பையோ வழங்க முடியாது."}
+}

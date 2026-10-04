@@ -1,0 +1,17 @@
+SCAMSHIELD BHARAT - START HERE
+
+1. Double-click run.bat
+   First time it downloads a few packages (about a minute). You need Python 3 from python.org.
+2. When the window says the server is running, open http://localhost:8000 in Chrome or Edge.
+3. Click an example under "Try a fictional example".
+
+Where things are:
+  backend\app\static\index.html   the website (the page you see in the browser)
+  backend\app\engine.py           the scam-detection engine
+  backend\app\learn.py            the learning loop
+  backend\app\pages.py            About / Privacy / Terms / Help pages
+  backend\tests\                  automated tests
+  README.md                       full documentation
+
+Screenshot reading needs Tesseract OCR (optional, see README).
+To stop the server: close the window or press Ctrl+C.
